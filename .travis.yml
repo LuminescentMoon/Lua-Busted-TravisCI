@@ -14,7 +14,7 @@ before_install:
   - luarocks install luacov-coveralls
 
 install:
-  - luarocks make
+  #- luarocks make # Uncomment if rockspec.
 
 script:
   - luacheck src spec

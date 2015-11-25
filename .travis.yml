@@ -1,8 +1,9 @@
 language: python
 sudo: false
+cache: pip
 
 env:
-  - LUA="luajit 2.0"
+  - LUA="luajit 2.0.4"
 
 before_install:
   - pip install hererocks
@@ -13,7 +14,7 @@ before_install:
   - luarocks install busted
   - luarocks install luacov-coveralls
 
-install:
+install: true
   #- luarocks make # Uncomment if rockspec.
 
 script:

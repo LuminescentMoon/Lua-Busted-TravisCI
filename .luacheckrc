@@ -1,2 +1,2 @@
 files["spec/"].std = "+busted"
-globals = {'love'}
+read_globals = {'love'}

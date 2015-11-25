@@ -1,2 +1,2 @@
-# Lua-Busted-TravisCI
+# Lua-Busted-TravisCI [![Build Status](https://travis-ci.org/Luminess/Lua-Busted-TravisCI.svg)](https://travis-ci.org/Luminess/Lua-Busted-TravisCI) [![Coverage Status](https://coveralls.io/repos/Luminess/Lua-Busted-TravisCI/badge.svg?branch=master&service=github)](https://coveralls.io/github/Luminess/Lua-Busted-TravisCI?branch=master) 
 Self project to learn how to use busted Lua tests with TravisCI.

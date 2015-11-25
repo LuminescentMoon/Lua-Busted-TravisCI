@@ -19,9 +19,11 @@ before_install:
 install: true
   #- luarocks make # Uncomment if rockspec.
 
+before_script:
+  - luacheck --formatter=TAP --codes --std=busted+$LUA spec
+  - luacheck --formatter=TAP --codes --std=$LUA src
+
 script:
-  - luacheck --formatter=TAP --std=busted+$LUA spec
-  - luacheck --formatter=TAP --std=$LUA src
   - busted -c
 
 after_success:

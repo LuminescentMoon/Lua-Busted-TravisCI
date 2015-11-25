@@ -20,8 +20,8 @@ install: true
   #- luarocks make # Uncomment if rockspec.
 
 script:
-  - luacheck --std=busted spec
-  - luacheck --std=$LUA src
+  - luacheck --formatter=TAP --std=busted+$LUA spec
+  - luacheck --formatter=TAP --std=$LUA src
   - busted -c
 
 after_success:

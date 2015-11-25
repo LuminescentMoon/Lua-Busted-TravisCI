@@ -21,8 +21,7 @@ script:
   - busted -c
 
 after_success:
-  - coveralls -b .. -r .. -i ./src --dump c.report.json
-  - luacov-coveralls -j c.report.json -v
+  - luacov-coveralls
 
 notifications:
   email:

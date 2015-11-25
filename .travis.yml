@@ -1,20 +1,24 @@
-language: erlang
+language: python
+sudo: false
 
 env:
   - LUA=""
   - LUA="luajit"
 
-branches:
-  only:
-    - master
+before_install:
+  - pip install hererocks
+  - hererocks l -r^ --$LUA
+  - export PATH=$PATH:$PWD/l/bin
+  - luarocks install luacheck
+  - luarocks install luafilesystem
+  - luarocks install busted
 
 install:
-  - sudo apt-get install luajit
-  - sudo apt-get install luarocks
-  - sudo luarocks install luafilesystem
-  - sudo luarocks install busted
+  - luarocks make
 
-script: "busted spec"
+script:
+  - luacheck src spec
+  - busted -c
 
 after_success:
   - coveralls -b .. -r .. -i ./src --dump c.report.json

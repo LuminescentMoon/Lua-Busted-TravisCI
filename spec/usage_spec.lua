@@ -1,7 +1,7 @@
 -- Shim for testing.
 local shim = {}
 local shimMetaTable = {
-  __call = function() return function() end end,
+  __call = function() end,
   __index = function() return shim end
 }
 setmetatable(shim, shimMetaTable)

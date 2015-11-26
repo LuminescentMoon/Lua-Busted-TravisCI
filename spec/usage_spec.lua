@@ -1,6 +1,6 @@
 -- Shim for testing.
 local shim = {}
-shim.__call = function() end
+shim.__call = function() return function() end end
 shim.__index = shim
 _G.love = shim
 

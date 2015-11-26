@@ -1,7 +1,10 @@
 -- Shim for testing.
 local shim = {}
-shim.__call = function() return function() end end
-shim.__index = shim
+local shimMetaTable = {
+  __call = function() return function() end end,
+  __index = function() return shim end
+}
+setmetatable(shim, shimMetaTable)
 _G.love = shim
 
 local Testee = require('main')

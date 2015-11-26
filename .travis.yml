@@ -1,8 +1,5 @@
 language: python
 sudo: false
-cache:
-  directories:
-    - $HOME/.cache/pip
 
 env:
   - LUA_VERSION="luajit 2.0.4" LUA_RUNTIME=luajit
@@ -25,6 +22,14 @@ before_script:
 
 script:
   - busted -c
+
+before_cache:
+  - rm -f $HOME/.cache/pip/log/debug.log
+
+cache:
+  directories:
+    - $HOME/.cache/pip
+    - $PWD/l
 
 after_success:
   - luacov-coveralls

@@ -1,11 +1,4 @@
--- Shim for testing.
-local shim = {}
-local shimMetaTable = {
-  __call = function() end,
-  __index = function() return shim end
-}
-setmetatable(shim, shimMetaTable)
-_G.love = shim
+_G.love = require('lib-infinityShim')
 
 local Testee = require('main')
 

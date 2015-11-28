@@ -24,7 +24,7 @@ script:
   - busted -c
 
 before_cache:
-  - rm -f $HOME/.cache/pip/log/debug.log
+  - rm -rf $HOME/.cache/pip/log/
 
 cache:
   directories:

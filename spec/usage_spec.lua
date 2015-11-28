@@ -1,4 +1,4 @@
-_G.love = require('lib-infinityShim')
+_G.love = require('lib-infinityShim')()
 
 local Testee = require('main')
 

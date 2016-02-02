@@ -28,7 +28,7 @@ script:
 
 cache:
   directories:
-    - $PWD/lua_installation/$LUA_RUNTIME$LUA_VERSION/
+    - $PWD/lua_installations/$LUA_RUNTIME$LUA_VERSION/
 
 after_success:
   - luacov-coveralls

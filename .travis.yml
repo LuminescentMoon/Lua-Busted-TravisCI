@@ -12,14 +12,13 @@ env:
 
 before_install:
   - pip install hererocks
-  - hererocks lua_installation --luarocks ^ --$LUA_RUNTIME $LUA_VERSION
+  - hererocks lua_installations/$LUA_RUNTIME$LUA_VERSION/ --luarocks ^ --$LUA_RUNTIME $LUA_VERSION
   - export PATH=$PATH:$PWD/lua_installations/$LUA_RUNTIME$LUA_VERSION/bin
 
 install: true
   #- luarocks make # Uncomment if rockspec.
 
 before_script:
-  - luarocks install luafilesystem
   - luarocks install busted
   - luarocks install luacov-coveralls
 
